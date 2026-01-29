@@ -22,8 +22,16 @@ async function loadEvents() {
       li.textContent = message;
       list.appendChild(li);
     });
+
+    function formatToIST(utcDate) {
+      return new Date(utcDate).toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour12: true
+      });
+    }
+    
   }
   
   loadEvents();
   setInterval(loadEvents, 15000);
-  
+  eventTime.innerText = formatToIST(event.created_at);
