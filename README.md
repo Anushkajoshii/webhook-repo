@@ -8,6 +8,7 @@ It is built as part of the Python Full Stack Developer assignment for Techstax P
 
 ## 📌 Architecture Overview
 
+```bash
 GitHub Repository (action-repo)
 |
 | Webhook (push / PR / merge)
@@ -22,7 +23,7 @@ MongoDB (event storage)
 |
 v
 HTML + JS UI (auto-refresh every 15s)
-
+```
 
 
 ## 📁 Repositories
@@ -73,63 +74,55 @@ Contains the Flask application that:
 ```bash
 git clone https://github.com/Anushkajoshii/webhook-repo.git
 cd webhook-repo/app
-2️⃣ Install dependencies
-bash
+```
+### 2️⃣ Install dependencies
+```bash
 Copy code
 pip install -r requirements.txt
-3️⃣ Start MongoDB
-bash
-Copy code
+```
+### 3️⃣ Start MongoDB
+```bash
 brew services start mongodb-community
-4️⃣ Run Flask app
-bash
-Copy code
+```
+### 4️⃣ Run Flask app
+```bash
 python3 app.py
+```
 Flask runs on:
-
-cpp
-Copy code
+```bash
 http://127.0.0.1:5000
-
-5️⃣ Expose using Cloudflare Tunnel
-bash
-Copy code
+```
+### 5️⃣ Expose using Cloudflare Tunnel
+```bash
 cloudflared tunnel --url http://localhost:5000
+```
 Copy the generated public URL and use it in GitHub webhook settings.
 
 🔗 GitHub Webhook Configuration (action-repo)
 Payload URL:
-
-arduino
-Copy code
+```bash
 https://<cloudflare-url>/webhook
+```
 Content type: application/json
-
 Events: Send me everything
-
 SSL verification: Enabled
-
 Active: Yes
 
-🖥️ UI
+### 🖥️ UI
 Open in browser:
-
-cpp
-Copy code
+```bash
 http://127.0.0.1:5000/
+```
 The UI displays:
 
 Author
-
 Action (PUSH / PULL_REQUEST / MERGE)
-
-From branch → To branch
-
+To branch
 Timestamp
 
 Updates automatically every 15 seconds.
 
-📹 Demo Video
+### 📹 Demo Video
 A short demo video is recorded showing:
 
 Webhook setup
@@ -142,7 +135,7 @@ UI updating automatically
 
 (Shared via Google Drive link in submission form.)
 
-✅ Assignment Status
+### ✅ Assignment Status
  Two repositories created
 
  GitHub webhook receiver implemented
@@ -155,6 +148,6 @@ UI updating automatically
 
  Optional merge event handled
 
-👤 Author
+### 👤 Author
 Anushka Joshi
 GitHub: https://github.com/Anushkajoshii
