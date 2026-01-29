@@ -46,8 +46,7 @@ def github_webhook():
         return jsonify({"status": "no payload"}), 200
 
     event_data = None
-    current_time = datetime.utcnow()
-
+    current_time = datetime.now()
 
 
 
@@ -62,7 +61,7 @@ def github_webhook():
             "action": "PUSH",
             "from_branch": branch_name,
             "to_branch": branch_name,
-            # "timestamp": current_time.strftime("%d %B %Y - %I:%M %p IST"),
+            "timestamp": current_time.strftime("%d %B %Y - %I:%M %p IST"),
             "created_at": current_time
         }
 
@@ -81,7 +80,7 @@ def github_webhook():
                 "action": "PULL_REQUEST",
                 "from_branch": pr_data.get("head", {}).get("ref"),
                 "to_branch": pr_data.get("base", {}).get("ref"),
-                # "timestamp": current_time.strftime("%d %B %Y - %I:%M %p UTC"),
+                "timestamp": current_time.strftime("%d %B %Y - %I:%M %p IST"),
                 "created_at": current_time
             }
 
@@ -93,7 +92,7 @@ def github_webhook():
                 "action": "MERGE",
                 "from_branch": pr_data.get("head", {}).get("ref"),
                 "to_branch": pr_data.get("base", {}).get("ref"),
-                # "timestamp": current_time.strftime("%d %B %Y - %I:%M %p UTC"),
+                "timestamp": current_time.strftime("%d %B %Y - %I:%M %p IST"),
                 "created_at": current_time
             }
 
@@ -124,4 +123,3 @@ def fetch_events():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-
