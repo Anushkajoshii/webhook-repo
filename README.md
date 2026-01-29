@@ -124,16 +124,7 @@ Updates automatically every 15 seconds.
 
 ### 📹 Demo Video
 A short demo video is recorded showing:
-
-Webhook setup
-
-Push event from action-repo
-
-Event appearing in MongoDB
-
-UI updating automatically
-
-(Shared via Google Drive link in submission form.)
+https://www.loom.com/share/0189e994a7cc42a8ae6245d83a6e4724
 
 ### ✅ Assignment Status
  Two repositories created
