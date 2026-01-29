@@ -46,7 +46,8 @@ def github_webhook():
         return jsonify({"status": "no payload"}), 200
 
     event_data = None
-    current_time = datetime.now()
+    current_time = datetime.utcnow()
+
 
 
 
