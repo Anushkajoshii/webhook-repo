@@ -4,11 +4,12 @@ function formatToIST(utcDate) {
     day: "2-digit",
     month: "long",
     year: "numeric",
-    hour: "2-digit",
+    hour: "numeric",      // 👈 IMPORTANT (not 2-digit)
     minute: "2-digit",
-    hour12: true
-  });
+    hour12: true          // 👈 forces 12-hour format
+  }) + " IST";
 }
+
 
 async function loadEvents() {
   const response = await fetch("/events");
